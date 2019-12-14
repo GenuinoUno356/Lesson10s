@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Raleway&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <nav class="body2">
+
+  <ul id="menu">
+    <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/sippets_assignment.html">Email Validator</a></li>
+    <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/catfaces.html">Date Validator</a></li>
+    <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/contactme.html">Contact</a></li>
+    <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/dates.html">Velocity Calculator</a></li>
+  </ul>
+
+  <div id="toggle">
+    <div class="span" id="one"></div>
+    <div class="span" id="two"></div>
+    <div class="span" id="three"></div>
+  </div>
+</nav>
+
+
+  <form>
+    <div class="main">
+      <p class="emailPrompt">Enter an email address:</p>
+      <input class="box" id='email'>
+      <button class="val" type='submit' id='validate'>Validate!</button>
+  </form>
+
+  <h2 id='result'></h2>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  </div>
+
+  <title>JS snippets</title>
+
+</head>
+
+<body>
+
+
+  <script class="main">
+
+    $(function() {
+
+  $("#toggle").click(function() {
+    $(this).toggleClass("on");
+    $("#resize").toggleClass("active");
+  });
+
+});
+
+
+
+    //email address validation function
+    function validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
+
+    function validate() {
+      var $result = $("#result");
+      var email = $("#email").val();
+      $result.text("");
+
+      if (validateEmail(email)) {
+        $result.text(email + " is valid :)");
+        $result.css("color", "#8FD46E");
+
+      } else {
+        $result.text(email + " is not valid :(");
+        $result.css("color", "red");
+      }
+      return false;
+    }
+
+    $("#validate").on("click", validate);
+  </script>
+
+</body>
+
+</html>

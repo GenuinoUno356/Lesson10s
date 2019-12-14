@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Raleway&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <nav class="body2">
+
+    <ul id="menu">
+      <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/sippets_assignment.html">Email Validator</a></li>
+      <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/catfaces.html">Date Validator</a></li>
+      <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/contactme.html">Contact</a></li>
+      <li><a href="/Users/juancarlossantillan/Desktop/Lesson 10/dates.html">Velocity Calculator</a></li>
+    </ul>
+
+    <div id="toggle">
+      <div class="span" id="one"></div>
+      <div class="span" id="two"></div>
+      <div class="span" id="three"></div>
+    </div>
+  </nav>
+
+
+
+
+  <title>JS snippets</title>
+
+</head>
+
+<body>
+  <div class="spike">
+    <span class="cat">Date:</span> <input class="bub" type="text" placeholder="01/01/2012"> <button class="cat dad">Validate</button>
+    <span></span>
+  </div>
+
+  <script class="main">
+    $(function() {
+
+      $("#toggle").click(function() {
+        $(this).toggleClass("on");
+        $("#resize").toggleClass("active");
+      });
+
+    });
+
+
+
+    //date validator
+    function isValidDate(value, userFormat) {
+
+      // Set default format if format is not provided
+      userFormat = userFormat || 'mm/dd/yyyy';
+
+      // Find custom delimiter by excluding the
+      // month, day and year characters
+      var delimiter = /[^mdy]/.exec(userFormat)[0];
+
+      // Create an array with month, day and year
+      // so we know the format by index
+      var theFormat = userFormat.split(delimiter);
+
+      // Get the user date now that we know the delimiter
+      var theDate = value.split(delimiter);
+
+      function isDate(date, format) {
+        var m, d, y, i = 0,
+          len = format.length,
+          f;
+        for (i; i < len; i++) {
+          f = format[i];
+          if (/m/.test(f)) m = date[i];
+          if (/d/.test(f)) d = date[i];
+          if (/y/.test(f)) y = date[i];
+        }
+        return (
+          m > 0 && m < 13 &&
+          y && y.length === 4 &&
+          d > 0 &&
+          // Is it a valid day of the month?
+          d <= (new Date(y, m, 0)).getDate()
+        );
+      }
+
+      return isDate(theDate, theFormat);
+
+    }
+    $('button').click(function() {
+      $('span').text(
+        isValidDate( $('input').val() ) ?
+        'Congrats! It\'s a valid date' :
+        'Sorry, not a valid date.');
+
+    });
+  </script>
+
+</body>
+
+</html>

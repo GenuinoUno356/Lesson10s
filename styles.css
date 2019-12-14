@@ -1,0 +1,268 @@
+.emailPrompt{
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5rem;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.main{
+  text-align: center;
+}
+
+.val{
+  font-family: 'Courier Prime', monospace;
+  font-size: 2rem;
+  border-radius: 25px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #8BF2FC;
+  border-color: black;
+  margin-left: 50px;
+}
+
+.box{
+  width: 15rem;
+  height: 2rem;
+  font-size: 0.8rem;
+}
+
+.green{
+  font-size: 1.5rem;
+}
+
+body{
+  background-color: #459CA6;
+}
+
+.cat{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.spike{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 100px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.bub{
+  width: 15rem;
+  height: 3rem;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.5rem;
+}
+
+.dad{
+  border-radius: 25px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: 'Courier Prime', monospace;
+  background-color: #8BF2FC;
+  border-color: black;
+}
+
+
+
+
+.butn {
+  font-family: 'Courier Prime', monospace;
+  background-color: #8BF2FC;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: black;
+  font-size: 3rem;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border-color: black;
+  border-width: medium;
+}
+
+.butn:hover {
+  font-family: 'Courier Prime', monospace;
+  background-color: #0F809F;
+  border-color: black;
+  text-decoration: none;
+}
+
+.crl{
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.body2 {
+  background: #1a1a1a;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+}
+
+.wat{
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+  color: #8BF2FC
+}
+
+#pro{
+  text-align: center;
+}
+nav {
+  background: #212121;
+  height: 70px;
+  z-index: 1;
+}
+
+nav #brand {
+  float: left;
+  display: block;
+  margin-left: 20px;
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: bold;
+}
+
+nav #brand a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+nav #brand a:hover {
+  color: #777777;
+}
+
+nav #menu {
+  float: left;
+  left: 15%;
+  position: relative;
+}
+
+nav #menu li {
+  display: inline-block;
+  padding: 0px 30px;
+  cursor: pointer;
+  line-height: 70px;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+nav #menu li a {
+  color: #fff;
+}
+
+nav #menu li:hover {
+  background: #333;
+}
+
+#toggle {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle .span {
+  height: 7px;
+  background: #333;
+  margin: 5px auto;
+  backface-visibility: hidden;
+}
+
+#toggle.on #one {
+  transform: rotate(45deg) translateX(6px) translateY(6px);
+}
+
+#toggle.on #two {
+  opacity: 0;
+}
+
+#toggle.on #three {
+  transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+#resize {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  background: #ddd;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  display: table;
+}
+
+#resize #menu {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#resize #menu li {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 50px;
+  min-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li:hover {
+  background: #212121;
+}
+
+#resize #menu li:hover a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li a {
+  color: #212121;
+}
+
+#resize.active {
+  visibility: visible;
+  opacity: 0.99;
+}
+
+@media (max-width: 768px) {
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+  }
+  nav #menu {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #resize {
+    visibility: hidden !important;
+  }
+}
